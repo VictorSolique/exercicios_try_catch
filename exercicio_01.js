@@ -5,6 +5,7 @@ class MeuErro extends Error {
   constructor(message) {
     super(message);
     this.name = "Meu erro";
+    this.message = message;
   }
 }
 
@@ -20,7 +21,7 @@ class Animal {
       return this.atributos();
     }
     catch(erro) {
-      console.log(erro.message);
+      console.log(erro);
     }
     
   } 
@@ -43,6 +44,7 @@ const meuAnimal = new Animal("", 3, "cachorro");
 const atributos = meuAnimal.mostrarAtributos();
 
 // Imprimindo os atributos
+console.log(atributos);
 /*
 console.log(atributos.nome);   
 console.log(atributos.idade);   

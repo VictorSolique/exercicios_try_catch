@@ -2,6 +2,7 @@ class MeuErro extends Error {
   constructor(message) {
     super(message);
     this.name = "Meu erro";
+    this.message = message;
   }
 }
 
@@ -17,7 +18,7 @@ class NerdIF {
       return this.atributos();
     }
     catch(erro) {
-      console.log(erro.name +" "+ erro.message);
+      console.log(erro);
     }
   }
 
@@ -30,7 +31,7 @@ class NerdIF {
       };
     }
     else 
-      throw new MeuErro("Um campo não foi preencido");
+      throw new MeuErro("Um campo não foi preenchido");
     
   }
 }
@@ -38,6 +39,7 @@ class NerdIF {
 const aluno = new NerdIF("João", "", 9.5);
 const atributos = aluno.retornarAtributos();
 
+console.log(atributos)
 /*
 console.log(atributos.estudante); 
 console.log(atributos.cosplay);   
